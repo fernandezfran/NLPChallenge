@@ -1,0 +1,4 @@
+With the parameters of SVM:
+{'C': 0.5, 'kernel': 'linear'}
+an accuracy of 0.80 is obtained
+the old one was 0.79
