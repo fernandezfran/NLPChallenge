@@ -21,6 +21,8 @@ import sklearn.neighbors
 import sklearn.tree
 import sklearn.svm
 
+import xgboost
+
 
 def clean_reviews(reviews):
     """Clean the text of the reviews."""
@@ -98,6 +100,7 @@ def main():
         "Naive Bayes",
         "Decision Tree",
         "Random Forest",
+        "XGBoost",
     )
     classifiers = (
         sklearn.linear_model.LogisticRegression(random_state=0),
@@ -107,6 +110,7 @@ def main():
         sklearn.naive_bayes.GaussianNB(),
         sklearn.tree.DecisionTreeClassifier(criterion="entropy", random_state=0),
         sklearn.ensemble.RandomForestClassifier(criterion="entropy", random_state=0),
+        xgboost.XGBClassifier(),
     )
     accuracy = train_models(
         X_train, X_test, y_train, y_test, classifiers, classifiers_names
